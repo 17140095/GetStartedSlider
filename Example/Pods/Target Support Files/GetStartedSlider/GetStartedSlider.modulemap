@@ -1,0 +1,6 @@
+framework module GetStartedSlider {
+  umbrella header "GetStartedSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,6 +14,11 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		DDD295B52AD53247007DBBF7 /* SliderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD295B42AD53247007DBBF7 /* SliderTest.swift */; };
+		DDD295BC2AD5335E007DBBF7 /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD295B82AD5335D007DBBF7 /* SlideView.swift */; };
+		DDD295BD2AD5335E007DBBF7 /* SlideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD295B92AD5335D007DBBF7 /* SlideViewModel.swift */; };
+		DDD295BE2AD5335E007DBBF7 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD295BA2AD5335E007DBBF7 /* SlideModel.swift */; };
+		DDD295BF2AD5335E007DBBF7 /* SlideScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD295BB2AD5335E007DBBF7 /* SlideScreen.swift */; };
 		F4D9FA4A34F15FBA5051A3EC /* Pods_GetStartedSlider_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C79904B6A9259BDF2DF4E7F /* Pods_GetStartedSlider_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +35,7 @@
 /* Begin PBXFileReference section */
 		194B0D0CA0DB2A868A474509 /* Pods-GetStartedSlider_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedSlider_Example.debug.xcconfig"; path = "Target Support Files/Pods-GetStartedSlider_Example/Pods-GetStartedSlider_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		501B7C7092DA57BD64CDDAC5 /* Pods-GetStartedSlider_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedSlider_Tests.release.xcconfig"; path = "Target Support Files/Pods-GetStartedSlider_Tests/Pods-GetStartedSlider_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5BAF6A06F635226D8D5517D6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5BAF6A06F635226D8D5517D6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GetStartedSlider_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetStartedSlider_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +49,14 @@
 		8926406EBF165E7077BC3211 /* Pods-GetStartedSlider_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedSlider_Example.release.xcconfig"; path = "Target Support Files/Pods-GetStartedSlider_Example/Pods-GetStartedSlider_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8C79904B6A9259BDF2DF4E7F /* Pods_GetStartedSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetStartedSlider_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		969CF2C07F58C7E89E2334F3 /* Pods-GetStartedSlider_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedSlider_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GetStartedSlider_Tests/Pods-GetStartedSlider_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9F8094C2817BD6978F67C1A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B1F5815D75B36D3817748A88 /* GetStartedSlider.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GetStartedSlider.podspec; path = ../GetStartedSlider.podspec; sourceTree = "<group>"; };
+		9F8094C2817BD6978F67C1A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B1F5815D75B36D3817748A88 /* GetStartedSlider.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GetStartedSlider.podspec; path = ../GetStartedSlider.podspec; sourceTree = "<group>"; };
 		B54E206467C88F54F34B3330 /* Pods_GetStartedSlider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetStartedSlider_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD295B42AD53247007DBBF7 /* SliderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTest.swift; sourceTree = "<group>"; };
+		DDD295B82AD5335D007DBBF7 /* SlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideView.swift; path = Slides/SlideView.swift; sourceTree = "<group>"; };
+		DDD295B92AD5335D007DBBF7 /* SlideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideViewModel.swift; path = Slides/SlideViewModel.swift; sourceTree = "<group>"; };
+		DDD295BA2AD5335E007DBBF7 /* SlideModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideModel.swift; path = Slides/SlideModel.swift; sourceTree = "<group>"; };
+		DDD295BB2AD5335E007DBBF7 /* SlideScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideScreen.swift; path = Slides/SlideScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +112,14 @@
 		607FACD21AFB9204008FA782 /* Example for GetStartedSlider */ = {
 			isa = PBXGroup;
 			children = (
+				DDD295B72AD53337007DBBF7 /* Slides */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				DDD295B42AD53247007DBBF7 /* SliderTest.swift */,
 			);
 			name = "Example for GetStartedSlider";
 			path = GetStartedSlider;
@@ -156,8 +168,18 @@
 				969CF2C07F58C7E89E2334F3 /* Pods-GetStartedSlider_Tests.debug.xcconfig */,
 				501B7C7092DA57BD64CDDAC5 /* Pods-GetStartedSlider_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DDD295B72AD53337007DBBF7 /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				DDD295BA2AD5335E007DBBF7 /* SlideModel.swift */,
+				DDD295BB2AD5335E007DBBF7 /* SlideScreen.swift */,
+				DDD295B82AD5335D007DBBF7 /* SlideView.swift */,
+				DDD295B92AD5335D007DBBF7 /* SlideViewModel.swift */,
+			);
+			name = Slides;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +240,6 @@
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
-						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -227,6 +248,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -332,6 +354,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				DDD295BD2AD5335E007DBBF7 /* SlideViewModel.swift in Sources */,
+				DDD295B52AD53247007DBBF7 /* SliderTest.swift in Sources */,
+				DDD295BE2AD5335E007DBBF7 /* SlideModel.swift in Sources */,
+				DDD295BF2AD5335E007DBBF7 /* SlideScreen.swift in Sources */,
+				DDD295BC2AD5335E007DBBF7 /* SlideView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GetStartedSlider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -494,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GetStartedSlider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -516,12 +545,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetStartedSlider_Example.app/GetStartedSlider_Example";
 			};
 			name = Debug;
 		};
@@ -534,12 +563,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetStartedSlider_Example.app/GetStartedSlider_Example";
 			};
 			name = Release;
 		};

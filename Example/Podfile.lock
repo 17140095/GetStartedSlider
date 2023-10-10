@@ -1,0 +1,16 @@
+PODS:
+  - GetStartedSlider (0.1.0)
+
+DEPENDENCIES:
+  - GetStartedSlider (from `../`)
+
+EXTERNAL SOURCES:
+  GetStartedSlider:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GetStartedSlider: af9f961f31a4a2a59c0f730886173b2f9e9f1f7a
+
+PODFILE CHECKSUM: dc4fb753f2b6f937b5a0e1418236db2cb3ffdf08
+
+COCOAPODS: 1.11.3

@@ -1,0 +1,22 @@
+{
+  "name": "GetStartedSlider",
+  "version": "0.1.0",
+  "summary": "A short description of GetStartedSlider.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Ali Raza/GetStartedSlider",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ali Raza": "araza08@i2cinc.com"
+  },
+  "source": {
+    "git": "https://github.com/Ali Raza/GetStartedSlider.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "14.0"
+  },
+  "source_files": "GetStartedSlider/Classes/**/*"
+}
