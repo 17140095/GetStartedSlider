@@ -1,6 +1,6 @@
 # GetStartedSlider
 
-[![CI Status](https://img.shields.io/travis/Ali Raza/GetStartedSlider.svg?style=flat)](https://travis-ci.org/Ali Raza/GetStartedSlider)
+[![CI Status](https://img.shields.io/travis/17140095/GetStartedSlider.svg?style=flat)](https://travis-ci.org/17140095/GetStartedSlider)
 [![Version](https://img.shields.io/cocoapods/v/GetStartedSlider.svg?style=flat)](https://cocoapods.org/pods/GetStartedSlider)
 [![License](https://img.shields.io/cocoapods/l/GetStartedSlider.svg?style=flat)](https://cocoapods.org/pods/GetStartedSlider)
 [![Platform](https://img.shields.io/cocoapods/p/GetStartedSlider.svg?style=flat)](https://cocoapods.org/pods/GetStartedSlider)

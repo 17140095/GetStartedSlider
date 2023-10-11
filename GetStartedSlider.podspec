@@ -9,7 +9,8 @@
 Pod::Spec.new do |s|
   s.name             = 'GetStartedSlider'
   s.version          = '0.1.0'
-  s.summary          = 'The GetStarted Slider is a simple SwiftUI slider which you can use in any view. It can be auto animate'
+  s.summary          = 'Simple SwiftUI View slider'
+  s.swift_versions   = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,17 +19,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A simple view slider for SwiftUI. You just provide the array of views to slide. The view can be slide by swipe or automatically with auto animation.
                        DESC
 
-  s.homepage         = 'https://github.com/Ali Raza/GetStartedSlider'
+  s.homepage         = 'https://github.com/17140095/GetStartedSlider'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Ali Raza' => 'araza08@i2cinc.com' }
-  s.source           = { :git => 'https://github.com/Ali Raza/GetStartedSlider.git', :tag => s.version.to_s }
+  s.author           = { 'Ali Raza' => 'aliraza.brame@gmail.com' }
+  s.source           = { :git => 'https://github.com/17140095/GetStartedSlider.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '14.0'
 
   s.source_files = 'GetStartedSlider/Classes/**/*'
   
