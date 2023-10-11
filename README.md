@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+- iOS Version: *14.0*
+
 ## Installation
 
 GetStartedSlider is available through [CocoaPods](https://cocoapods.org). To install
@@ -22,7 +24,7 @@ pod 'GetStartedSlider'
 
 ## Author
 
-Ali Raza, araza08@i2cinc.com
+Ali Raza, 17140095@gift.edu.pk
 
 ## License
 

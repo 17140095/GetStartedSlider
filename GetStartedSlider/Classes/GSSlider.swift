@@ -2,15 +2,15 @@ import SwiftUI
 
 public struct GSSlider<T: View>: View  {
     @State private var selectedTab = SlideID()
-    @State private var pageTabViewStyle = PageTabViewStyle(indexDisplayMode: .automatic)
     private var slideViews: [T] = []
     private var slidesId: [SlideID] = []
+    private var config = GSSConfig()
     
-    public init(slides: [T]) {
+    public init(slides: [T], config: GSSConfig = GSSConfig()) {
         self.slideViews = slides
         self.generateSlideIds()
-        self.selectedTab = slidesId[0]
-        self.setTheme()
+        self.selectedTab = slidesId.first ?? SlideID()
+        self.config = config
     }
     
    public var body: some View {
@@ -22,22 +22,49 @@ public struct GSSlider<T: View>: View  {
                        view.tag(slidesId[index])
                    }
                }
-               .tabViewStyle(pageTabViewStyle)
+               .tabViewStyle(getPageStyle(style: config.pagingStyle))
+               .onAppear(perform: {
+                   setTheme()
+                   if config.shouldAutoAnimate && slideViews.count > 1{
+                       startAutoChangeTimer()
+                   }
+               })
                
                
            }
            
        }
     }
-    public func setIndicatorColors(primary: Color, secondary: Color) -> Self {
-        setTheme(pColor: primary, sColor: secondary)
-        return self
+    
+    private func startAutoChangeTimer() {
+        Timer.scheduledTimer(withTimeInterval: config.autoAnimateDelay, repeats: true) { _ in
+            selectedTab = slidesId[(getSlideIndex(key: selectedTab) + 1) % slideViews.count]
+        }
+    }
+    private func getSlideIndex(key: SlideID)->Int {
+      
+        for index in 0..<slidesId.count {
+            if slidesId[index] == key {
+                return index
+            }
+        }
+        return -1
     }
     
-    private func setTheme(pColor: Color = Color.black, sColor: Color = Color.gray){
-        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(pColor)
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor(sColor)
-        UIPageControl.appearance().tintColor = UIColor(sColor)
+    private func getPageStyle(style: GSSPagingStyle) -> PageTabViewStyle {
+        switch style {
+        case .autoIndicator:
+            return .page(indexDisplayMode: .automatic)
+        case .alwaysIndicator:
+            return .page(indexDisplayMode: .always)
+        case .noIndicator:
+            return .page(indexDisplayMode: .never)
+        }
+    }
+    private func setTheme(){
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(config.primaryColor)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor(config.secondaryColor)
+        UIPageControl.appearance().tintColor = UIColor(config.secondaryColor)
     }
     private mutating func generateSlideIds() {
         self.slidesId = []
