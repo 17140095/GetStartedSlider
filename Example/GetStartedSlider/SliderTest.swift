@@ -11,8 +11,8 @@ import GetStartedSlider
 
 struct SliderTest: View {
     var body: some View {
-        GSSlider(slides: SlideViewModel().getSlideViews())
-            .setIndicatorColors(primary: Color.red, secondary: Color.green)
+        GSSlider(slides: SlideViewModel().getSlideViews(), config: GSSConfig(primaryColor: .red, shouldAutoAnimate: true))
+            
             
     }
 }
