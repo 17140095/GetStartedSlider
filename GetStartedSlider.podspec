@@ -29,7 +29,7 @@ A simple view slider for SwiftUI. You just provide the array of views to slide. 
   s.source           = { :git => 'https://github.com/17140095/GetStartedSlider.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '14.0'
+  s.ios.deployment_target = '15.0'
 
   s.source_files = 'GetStartedSlider/Classes/**/*'
   

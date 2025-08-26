@@ -4,13 +4,20 @@ public struct GSSlider<T: View>: View  {
     @State private var selectedTab = SlideID()
     private var slideViews: [T] = []
     private var slidesId: [SlideID] = []
-    private var config = GSSConfig()
     
-    public init(slides: [T], config: GSSConfig = GSSConfig()) {
+    private var primaryColor: Color = .primary
+    private var secondaryColor: Color = .secondary
+    private var pagingStyle: GSSPagingStyle = .autoIndicator
+    private var shouldAutoAnimate: Bool = false
+    private var autoAnimateDelay: CGFloat = 2.0
+    
+    private var onButtonPress: (() -> Void)?
+    private var doneButtonTitle: String = "Done"
+    
+    public init(slides: [T]) {
         self.slideViews = slides
         self.generateSlideIds()
         self.selectedTab = slidesId.first ?? SlideID()
-        self.config = config
     }
     
    public var body: some View {
@@ -22,13 +29,38 @@ public struct GSSlider<T: View>: View  {
                        view.tag(slidesId[index])
                    }
                }
-               .tabViewStyle(getPageStyle(style: config.pagingStyle))
+               .tabViewStyle(getPageStyle(style: pagingStyle))
                .onAppear(perform: {
                    setTheme()
-                   if config.shouldAutoAnimate && slideViews.count > 1{
+                   if shouldAutoAnimate && slideViews.count > 1{
                        startAutoChangeTimer()
                    }
                })
+               .overlay {
+                   if getSlideIndex(key: selectedTab) + 1 == slideViews.count {
+                       VStack {
+                            Spacer()
+                            HStack{
+                                 Spacer()
+                                 Button {
+                                      // Action for Get Started button
+                                     onButtonPress?()
+                                 } label: {
+                                      Text(doneButtonTitle)
+                                        .foregroundColor(secondaryColor)
+                                        .fontWeight(.bold)
+                                        .padding(20)
+                                        .background(primaryColor)
+                                        .cornerRadius(10)
+                                 }
+                                 .clipShape(.circle)
+                                 
+                                 
+                            }
+                            .padding(.bottom, 20)
+                       }
+                   }
+               }
                
                
            }
@@ -37,8 +69,13 @@ public struct GSSlider<T: View>: View  {
     }
     
     private func startAutoChangeTimer() {
-        Timer.scheduledTimer(withTimeInterval: config.autoAnimateDelay, repeats: true) { _ in
-            selectedTab = slidesId[(getSlideIndex(key: selectedTab) + 1) % slideViews.count]
+        Timer.scheduledTimer(withTimeInterval: autoAnimateDelay, repeats: true) { _ in
+            if getSlideIndex(key: selectedTab) + 1 == slideViews.count {
+                return
+            } else {
+                selectedTab = slidesId[(getSlideIndex(key: selectedTab) + 1) % slideViews.count]
+            }
+            
         }
     }
     private func getSlideIndex(key: SlideID)->Int {
@@ -62,9 +99,9 @@ public struct GSSlider<T: View>: View  {
         }
     }
     private func setTheme(){
-        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(config.primaryColor)
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor(config.secondaryColor)
-        UIPageControl.appearance().tintColor = UIColor(config.secondaryColor)
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(primaryColor)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor(secondaryColor)
+        UIPageControl.appearance().tintColor = UIColor(secondaryColor)
     }
     private mutating func generateSlideIds() {
         self.slidesId = []
@@ -72,8 +109,46 @@ public struct GSSlider<T: View>: View  {
             slidesId.append(SlideID())
         }
     }
+    
+    // Setters
+    public func setPrimaryColor(color: Color) -> Self {
+        var copy = self
+        copy.primaryColor = color
+        return copy
+    }
+    public func setSecondaryColor(color: Color) -> Self {
+        var copy = self
+        copy.secondaryColor = color
+        return copy
+    }
+    public func setPagingStyle(style: GSSPagingStyle) -> Self {
+        var copy = self
+        copy.pagingStyle = style
+        return copy
+    }
+    public func setAutoAnimate(shouldAutoAnimate: Bool = true, autoAnimateDelay: CGFloat = 2.0) -> Self {
+        var copy = self
+        copy.shouldAutoAnimate = shouldAutoAnimate
+        copy.autoAnimateDelay = autoAnimateDelay
+        return copy
+    }
+    public func onDoneButtonPress(action: @escaping () -> Void) -> Self {
+        var copy = self
+        copy.onButtonPress = action
+        return copy
+    }
+    public func setDoneButtonTitle(title: String) -> Self {
+        var copy = self
+        copy.doneButtonTitle = title
+        return copy
+    }
 }
 
 private struct SlideID: Identifiable, Hashable {
     let id = UUID().uuidString
+}
+public enum GSSPagingStyle {
+    case noIndicator
+    case autoIndicator
+    case alwaysIndicator
 }
